@@ -1,4 +1,4 @@
-source 'http://rubygems/'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -34,7 +34,7 @@ gem 'rspec'
 gem 'rspec-rails'
 
 # Styles are also very important
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0.alpha1'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
