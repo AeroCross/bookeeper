@@ -22,5 +22,10 @@ module Bookeeper
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Use RSpec as the default generator
+    config.generators do |g|
+        g.test_framework :rspec
+    end
   end
 end
