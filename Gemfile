@@ -33,6 +33,9 @@ gem 'money'
 gem 'rspec'
 gem 'rspec-rails'
 
+# Styles are also very important
+gem 'bootstrap-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
