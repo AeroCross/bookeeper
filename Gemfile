@@ -34,7 +34,7 @@ gem 'rspec'
 gem 'rspec-rails'
 
 # Styles are also very important
-gem 'bootstrap-rails'
+gem 'bootstrap-sass'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
