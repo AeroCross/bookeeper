@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   # root
-  root to: "auth#index"
+  root to: 'auth#index'
 
   # authentication
-  get "login", to: "auth#index", as: "login_path"
-  post "auth/login"
+  get 'login', to: 'auth#index', as: 'login_path'
+  get 'auth/login', to: 'auth#index'
+  post 'auth/login'
+  get 'auth/logout'
+  get 'logout', to: 'auth#logout', as: 'logout_path'
 
   resources :users
 
