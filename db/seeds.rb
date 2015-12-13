@@ -5,3 +5,22 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# default users
+user = User.create({
+    :email => "a@a.com",
+    :name => "Example User",
+    :password => '123',
+  })
+
+Account.create({
+    :user_id => user.id,
+    :type => 'checkings',
+    :balance => 1000,
+  })
+
+Account.create({
+    :user_id => user.id,
+    :type => 'savings',
+    :balance => 1500,
+  })
