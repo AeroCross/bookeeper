@@ -1,8 +1,8 @@
 class AuthController < ApplicationController
   def index
     if logged_in?
-      # redirect to the main page
-      return render plain: "OK"
+      # @TODO: configure default, or last visited
+      return redirect_to :accounts
     else
       render_form
     end
@@ -11,8 +11,8 @@ class AuthController < ApplicationController
   def login
     if authenticate(user)
       create_session
-      # redirect to the main page
-      return render plain: "OK"
+      # @TODO: configure default, or last visited
+      return redirect_to :accounts
     else
       alert("Incorrect username or password", "warning")
     end
