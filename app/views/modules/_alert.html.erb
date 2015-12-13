@@ -1,0 +1,9 @@
+<% if flash["alert"] %>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="alert alert-<%= flash["alert"]["type"] %>" role="alert">
+        <%= flash["alert"]["message"] %>
+      </div>
+    </div>
+  </div>
+<% end %>

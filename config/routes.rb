@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+  # root
+  root to: 'auth#index'
+
+  # authentication
+  get 'login', to: 'auth#index', as: 'login_path'
+  get 'logout', to: 'auth#logout', as: 'logout_path'
+  post 'login', to: 'auth#login'
+  
   resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
