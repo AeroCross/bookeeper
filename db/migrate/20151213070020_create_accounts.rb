@@ -1,6 +1,7 @@
 class CreateAccounts < ActiveRecord::Migration
   def change
     create_table :accounts do |t|
+      t.string :name, null: false
       t.integer :user_id, null: false
       t.string :type, null: false, default: "checkings"
       t.integer :balance, null: false, defailt: 0

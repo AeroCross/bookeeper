@@ -14,12 +14,14 @@ user = User.create({
   })
 
 Account.create({
+    :name => "Commonwealth Bank", 
     :user_id => user.id,
     :type => 'checkings',
     :balance => 1000,
   })
 
 Account.create({
+    :name => "Bank of America",
     :user_id => user.id,
     :type => 'savings',
     :balance => 1500,

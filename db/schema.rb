@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20151213070020) do
 
   create_table "accounts", force: :cascade do |t|
+    t.string   "name",       limit: 255,                       null: false
     t.integer  "user_id",    limit: 4,                         null: false
     t.string   "type",       limit: 255, default: "checkings", null: false
     t.integer  "balance",    limit: 4,                         null: false
