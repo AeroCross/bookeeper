@@ -3,7 +3,7 @@ class AuthController < ApplicationController
     # check if logged in
       # if so, send to main paage
       # if not, show login form
-    render "auth/login"
+    render_form
   end
 
   def login
@@ -11,8 +11,6 @@ class AuthController < ApplicationController
       create_session
       return render plain: "OK"
     end
-
-    # only for GET
     render_form
   end
 
