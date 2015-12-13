@@ -28,7 +28,7 @@ class AuthController < ApplicationController
       :message => "You've been logged out",
       :type => "info",
     }
-    render_form
+    redirect_to login_path
   end
 
   private
