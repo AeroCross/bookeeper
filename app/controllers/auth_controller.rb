@@ -34,11 +34,11 @@ class AuthController < ApplicationController
   end
 
   def create_session
-    session[:logged_in_user] = user.id
+    session[:current_user] = user.id
   end
 
   def destroy_session
-    session[:logged_in_user] = nil
+    session[:current_user] = nil
   end
   
   def authenticate(user)
@@ -46,7 +46,7 @@ class AuthController < ApplicationController
   end
 
   def logged_in?
-    session[:logged_in_user] ? true : false
+    session[:current_user] ? true : false
   end
 
   def render_form
