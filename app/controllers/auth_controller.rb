@@ -16,7 +16,7 @@ class AuthController < ApplicationController
     else
       flash[:alert] = {
         :message => "Incorrect username or password",
-        :type => "danger"
+        :type => "danger",
       }
     end
     redirect_to login_path
@@ -26,12 +26,13 @@ class AuthController < ApplicationController
     destroy_session
     flash[:alert] = {
       :message => "You've been logged out",
-      :type => "info"
+      :type => "info",
     }
     render_form
   end
 
   private
+
   def auth_params
     params.permit(:email, :password)
   end
@@ -53,11 +54,10 @@ class AuthController < ApplicationController
   end
 
   def logged_in?
-    session[:logged_in_user] ? true : false;
+    session[:logged_in_user] ? true : false
   end
 
   def render_form
     return render "auth/login"
   end
-
 end
