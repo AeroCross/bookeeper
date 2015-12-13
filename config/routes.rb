@@ -3,12 +3,10 @@ Rails.application.routes.draw do
   root to: 'auth#index'
 
   # authentication
-  get 'auth/logout'
-  get 'auth/login', to: 'auth#index'
   get 'login', to: 'auth#index', as: 'login_path'
   get 'logout', to: 'auth#logout', as: 'logout_path'
-  post 'auth/login'
-
+  post 'login', to: 'auth#login'
+  
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
