@@ -14,20 +14,14 @@ class AuthController < ApplicationController
       # redirect to the main page
       return render plain: "OK"
     else
-      flash[:alert] = {
-        :message => "Incorrect username or password",
-        :type => "danger",
-      }
+      alert("Incorrect username or password", "warning")
     end
     redirect_to login_path
   end
 
   def logout
     destroy_session
-    flash[:alert] = {
-      :message => "You've been logged out",
-      :type => "info",
-    }
+    alert("You've been logged out")
     redirect_to login_path
   end
 
