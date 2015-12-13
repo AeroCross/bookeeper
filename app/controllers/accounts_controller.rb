@@ -4,7 +4,7 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.all
+    accounts
   end
 
   # GET /accounts/1
@@ -62,13 +62,16 @@ class AccountsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_account
-      @account = Account.find_by_user_id(session[:current_user])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def account_params
-      params.require(:account).permit(:user_id, :type, :balance)
-    end
+  def account
+    @account ||= Account.find(params[:id])
+  end
+
+  def accounts
+    @accounts ||= Account.find_all_by_user_id(current_user_id)
+  end
+
+  def account_params
+    params.require(:account).permit(:user_id, :type, :balance)
+  end
 end
