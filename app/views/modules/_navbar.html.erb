@@ -16,4 +16,13 @@
       </li>
     </ul>
   </div>
+  <div class="collapse navbar-toggleable-xs pull-right">
+    <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <% if @current_user %>
+            <a class="nav-link" href="<%= logout_path %>">Logout from <strong><%= @current_user.name %></a></strong>
+          <% end %>
+        </li>
+      </ul>
+  </div>
 </nav>
