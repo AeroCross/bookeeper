@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.select(:type, options_for_select(Account.types, @account.try(:type))) %>
   </div>
   <div class="field">
     <%= f.label :balance %><br>
