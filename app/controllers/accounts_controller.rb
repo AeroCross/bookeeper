@@ -1,10 +1,11 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :edit, :update, :destroy]
+  before_action :set_accounts, only: [:index]
+  before_action :current_user
 
   # GET /accounts
   # GET /accounts.json
   def index
-    accounts
   end
 
   # GET /accounts/1
@@ -63,10 +64,10 @@ class AccountsController < ApplicationController
 
   private
 
-  def set_account
+  def account
     @account ||= Account.find(params[:id])
   end
-
+  
   def accounts
     @accounts ||= Account.find_all_by_user_id(current_user_id)
   end
@@ -74,4 +75,7 @@ class AccountsController < ApplicationController
   def account_params
     params.require(:account).permit(:user_id, :type, :balance)
   end
+
+  alias_method :set_account, :account
+  alias_method :set_accounts, :accounts
 end
