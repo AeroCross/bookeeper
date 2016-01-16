@@ -1,0 +1,29 @@
+<%= form_for(@transaction) do |f| %>
+  
+  <%= hidden_field_tag :user_id, current_user_id %>
+
+  <fieldset class="form-group">
+    <%= f.label :amount %>
+    <%= f.text_field :amount, :class => "form-control" %>
+    <small class="text-muted"><strong>Remember:</strong> This will use the account's default currency</small>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :account %>
+    <%= select_tag :account_id, options_from_collection_for_select(@accounts, :id, :name), :class => 'form-control c-select' %>
+    <small class="text-muted">Which account did the money come from?</small>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :payee %>
+    <%= text_field_tag :payee, nil, :class => "form-control" %>
+    <small class="text-muted">Who did you gave your money to?</small>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :memo %>
+    <%= f.text_field :memo, :class => "form-control" %>
+    <small class="text-muted">What's this payment all about?</small>
+  </fieldset>
+
+<% end %>
