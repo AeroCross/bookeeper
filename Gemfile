@@ -29,10 +29,6 @@ gem 'bcrypt', '~> 3.1.7'
 # Money is important!
 gem 'money'
 
-# Testing is important, too!
-gem 'rspec'
-gem 'rspec-rails'
-
 # Styles are also very important
 gem 'bootstrap', '~> 4.0.0.alpha1'
 
@@ -42,8 +38,10 @@ gem 'bootstrap', '~> 4.0.0.alpha1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
-  gem 'pry'
+group :test do
+  # Testing is important, too!
+  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -52,5 +50,9 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-rails'
 end
 

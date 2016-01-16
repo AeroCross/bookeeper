@@ -1,8 +1,7 @@
 class AuthController < ApplicationController
   def index
     if logged_in?
-      # redirect to the main page
-      return render plain: "OK"
+      return redirect_to default_path
     else
       render_form
     end
@@ -11,8 +10,7 @@ class AuthController < ApplicationController
   def login
     if authenticate(user)
       create_session
-      # redirect to the main page
-      return render plain: "OK"
+      return redirect_to default_path
     else
       alert("Incorrect username or password", "warning")
     end
@@ -36,11 +34,11 @@ class AuthController < ApplicationController
   end
 
   def create_session
-    session[:logged_in_user] = user.id
+    session[:current_user] = user.id
   end
 
   def destroy_session
-    session[:logged_in_user] = nil
+    session[:current_user] = nil
   end
   
   def authenticate(user)
@@ -48,7 +46,7 @@ class AuthController < ApplicationController
   end
 
   def logged_in?
-    session[:logged_in_user] ? true : false
+    session[:current_user] ? true : false
   end
 
   def render_form

@@ -5,3 +5,24 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# default users
+user = User.create({
+    :email => "a@a.com",
+    :name => "Example User",
+    :password => '123',
+  })
+
+Account.create({
+    :name => "Commonwealth Bank", 
+    :user_id => user.id,
+    :type => 'checkings',
+    :balance => 1000,
+  })
+
+Account.create({
+    :name => "Bank of America",
+    :user_id => user.id,
+    :type => 'savings',
+    :balance => 1500,
+  })

@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
+  resources :accounts
   # root
-  root to: 'auth#index'
+  root to: "auth#index"
 
   # authentication
-  get 'login', to: 'auth#index', as: 'login_path'
-  get 'logout', to: 'auth#logout', as: 'logout_path'
-  post 'login', to: 'auth#login'
+  get "login", to: "auth#index"
+  get "logout", to: "auth#logout"
+  post "login", to: "auth#login"
   
+  # accounts
+  get "accounts", to: "accounts#index", as: "default"
+
+  # users
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
