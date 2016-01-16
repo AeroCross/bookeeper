@@ -1,5 +1,6 @@
 class Account < ActiveRecord::Base
   belongs_to :user
+  has_many :transactions
   
   # this should be removed if STI needs to be used
   self.inheritance_column = :unecessary
