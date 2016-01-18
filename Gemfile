@@ -32,6 +32,10 @@ gem 'money'
 # Styles are also very important
 gem 'bootstrap', '~> 4.0.0.alpha1'
 
+# Form objects and validations, yay!
+gem 'dry-validation'
+gem 'reform'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
