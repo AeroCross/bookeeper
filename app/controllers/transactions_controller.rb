@@ -4,6 +4,7 @@ class TransactionsController < ApplicationController
 
   def new
     @transaction = Transaction.new
+    @form = TransactionForm.new(@transaction)
     @accounts = Account.find_all_by_user_id(current_user_id)
   end
 end
