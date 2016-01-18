@@ -27,8 +27,5 @@ module Bookeeper
     config.generators do |g|
         g.test_framework :rspec
     end
-
-    # Autoload libs
-    config.autoload_paths << Rails.root.join('lib')
   end
 end
